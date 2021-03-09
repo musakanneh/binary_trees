@@ -10,5 +10,19 @@
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
+	/**
+	 * Check for parent value
+	 * Allocate memory  for a new node and store the address
+	 * in the parent pointer
+	 * store the value in the parent pointer
+	 * 
+	 */
+	if (value == NULL)
+	{
+		return (NULL);
+	}
+	int new_node = parent;
+	parent = (new_node *)malloc(sizeof(new_node));
+	
 	return (0);
 }
