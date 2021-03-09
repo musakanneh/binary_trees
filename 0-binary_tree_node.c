@@ -17,12 +17,17 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	 * store the value in the parent pointer
 	 * 
 	 */
-	if (value == NULL)
+	if (value != 0)
 	{
 		return (NULL);
 	}
-	int new_node = parent;
-	parent = (new_node *)malloc(sizeof(new_node));
-	
+	binary_tree_t *temp_node = NULL;
+	if (!(parent))
+	{
+		temp_node = (binary_tree_t *)malloc(sizeof(binary_tree_t));
+	}
+	temp_node->left = temp_node->right = NULL;
+	parent = temp_node;
+
 	return (0);
 }
