@@ -11,23 +11,22 @@
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
 	/**
-	 * Check for parent value
-	 * Allocate memory  for a new node and store the address
-	 * in the parent pointer
-	 * store the value in the parent pointer
-	 * 
+	 * create and allocate memory to a new node;
+	 * assign it a value and set the children
+	 * node to NULL;
+	 * then return the new node
 	 */
-	if (value != 0)
+	binary_tree_t *new_node;
+
+	new_node = malloc(sizeof(binary_tree_t));
+
+	if (!new_node)
 	{
 		return (NULL);
 	}
-	binary_tree_t *temp_node = NULL;
-	if (!(parent))
-	{
-		temp_node = (binary_tree_t *)malloc(sizeof(binary_tree_t));
-	}
-	temp_node->left = temp_node->right = NULL;
-	parent = temp_node;
-
-	return (0);
+	new_node->n = value;
+	new_node->parent = parent;
+	new_node->left = NULL;
+	new_node->right = NULL;
+	return (new_node);
 }
